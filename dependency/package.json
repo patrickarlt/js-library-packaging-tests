@@ -1,0 +1,41 @@
+{
+  "name": "packaging-and-distribution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "jspm": {
+    "main": "index.js",
+    "directories": {
+      "lib": "./lib"
+    },
+    "registry": "npm",
+    "format": "es6"
+  },
+  "browserify": {
+    "transform": [
+      ["babelify", { "optional": "runtime" } ]
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rimraf ./dist",
+    "build": "npm run amd && npm run global",
+    "preamd": "mkdirp ./dist/amd",
+    "amd": "babel ./lib --modules amd --out-dir ./dist/amd/ --source-maps",
+    "preglobal": "mkdirp ./dist/global",
+    "global": "browserify ./lib/index.js --standalone Lib -t [ babelify --optional runtime ] --debug | exorcist ./dist/global/index.js.map > ./dist/global/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.2.6",
+    "babelify": "^6.0.2",
+    "browserify": "^10.0.0",
+    "exorcist": "^0.3.0",
+    "mkdirp": "^0.5.0",
+    "rimraf": "^2.3.3"
+  },
+  "dependencies": {
+    "babel-runtime": "^5.2.6"
+  }
+}
