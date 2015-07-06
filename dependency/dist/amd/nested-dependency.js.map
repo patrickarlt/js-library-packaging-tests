@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../lib/nested-dependency.js"],"names":[],"mappings":";;;AAAA,MAAI,KAAK,GAAG,mBAAmB,CAAC;;AAEhC,SAAO,CAAC,GAAG,CAAC,KAAK,EAAE,wBAAwB,CAAC,CAAC;;mBAE9B,KAAK","file":"lib/nested-dependency.js","sourcesContent":["let value = 'Nested Dependency';\n\nconsole.log(value, 'in ./nested-dependency');\n\nexport default value;\n"]}

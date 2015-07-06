@@ -1,0 +1,17 @@
+{
+  "name": "browserify-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browserify index.js -o compiled.js && node compiled.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "packaging-and-distribution": "../"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.4"
+  }
+}
